@@ -1,31 +1,46 @@
-Recruiting and retaining drivers is seen by industry watchers as a tough battle for Ola. Churn among drivers is high and it’s very easy for drivers to stop working for the service on the fly or jump to Uber depending on the rates.
+🚖 Ola Driver Attrition Prediction
+This project predicts whether Ola drivers are likely to leave (attrition) or stay, using machine learning models trained on driver data.
 
-As the companies get bigger, the high churn could become a bigger problem. To find new drivers, Ola is casting a wide net, including people who don’t have cars for jobs. But this acquisition is really costly. Losing drivers frequently impacts the morale of the organization and acquiring new drivers is more expensive than retaining existing ones.
+It includes:
 
-You are working as a data scientist with the Analytics Department of Ola, focused on driver team attrition. You are provided with the monthly information for a segment of drivers for 2019 and 2020 and tasked to predict whether a driver will be leaving the company or not based on their attributes like
+Exploratory Data Analysis & Model Training (OLa_Driver_Attrition.ipynb)
 
-Demographics (city, age, gender etc.)
-Tenure information (joining date, Last Date)
-Historical data regarding the performance of the driver (Quarterly rating, Monthly business acquired, grade, Income)
+Deployment-ready Streamlit App (app.py)
 
-Dataset:https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/002/492/original/ola_driver_scaler.csv
+Pre-trained ML Models (random_forest_model.joblib, xgboost_model.joblib)
 
-Dataset Link: https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/002/492/original/ola_driver_scaler.csv
+note :- The Random Forest Model Was Compressed Due to Its Big Size Don't Forget to Decompress It 
 
+📂 Project Structure
+├── app.py                        # Streamlit web app
+├── requirements.txt              # Dependencies
+├── OLa_Driver_Attrition.ipynb    # Notebook (EDA + training)
+├── random_forest_model.joblib    # Saved RandomForest model
+├── xgboost_model.joblib          # Saved XGBoost model
+└── README.md                     # Documentation
+⚙️ Setup & Installation
+Clone the repository:
+git clone https: (//github.com/Rutvik936/Ola-Churn-Predition.git)
+cd Ola_Driver_Churn_pred
+Install dependencies:
+pip install -r requirements.txt
+🚀 Running the Streamlit App
+Run the app with:
 
-Column Profiling:
+streamlit run app.py
+👉 Open the link shown in terminal (default: http://localhost:8501).
 
-MMMM-YY : Reporting Date (Monthly)
-Driver_ID : Unique id for drivers
-Age : Age of the driver
-Gender : Gender of the driver – Male : 0, Female: 1
-City : City Code of the driver
-Education_Level : Education level – 0 for 10+ ,1 for 12+ ,2 for graduate
-Income : Monthly average Income of the driver
-Date Of Joining : Joining date for the driver
-LastWorkingDate : Last date of working for the driver
-Joining Designation : Designation of the driver at the time of joining
-Grade : Grade of the driver at the time of reporting
-Total Business Value : The total business value acquired by the driver in a month (negative business indicates cancellation/refund or car EMI adjustments)
-Quarterly Rating : Quarterly rating of the driver: 1,2,3,4,5 (higher is better)
+📊 Models Used
+Random Forest Classifier
+XGBoost Classifier
+Both models are trained and saved as .joblib files. Predictions are served in the Streamlit app.
 
+📘 Usage
+Open the Streamlit app.
+Enter driver details manually (Age, Tenure, Income, etc.).
+Both models will predict:
+Stay ✅ or
+Leave ❌
+🧑‍💻 Author
+Developed by Rutvik Mahadik
+For learning, deployment, and demonstration of EDA + ML + Streamlit workflow.
